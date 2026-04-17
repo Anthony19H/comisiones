@@ -1,35 +1,126 @@
+/* Reset y bases */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family: Arial;
+    font-family: 'Segoe UI', Arial, sans-serif;
     background-color: #0f172a;
-    color: white;
+    color: #f8fafc;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 20px; /* Espacio para que no pegue a los bordes en móvil */
 }
 
+/* Contenedor Adaptable */
 .contenedor {
     background-color: #1e293b;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
+    padding: 2rem;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 450px; /* Ancho máximo para tablets/escritorio */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #38bdf8;
+}
+
+/* Campos de entrada */
+.campo {
+    margin-bottom: 1.2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #94a3b8;
 }
 
 input {
     width: 100%;
-    margin-bottom: 10px;
-    padding: 5px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    background-color: #0f172a;
+    color: white;
+    font-size: 1rem;
+    transition: border-color 0.3s;
 }
 
+input:focus {
+    outline: none;
+    border-color: #38bdf8;
+}
+
+/* Botón con feedback visual */
 button {
     width: 100%;
-    padding: 10px;
+    padding: 14px;
     background-color: #22c55e;
     border: none;
+    border-radius: 8px;
     color: white;
+    font-weight: bold;
+    font-size: 1rem;
     cursor: pointer;
+    transition: transform 0.1s, background-color 0.2s;
+    margin-top: 10px;
+}
+
+button:active {
+    transform: scale(0.98);
 }
 
 button:hover {
     background-color: #16a34a;
+}
+
+/* Sección de Resultados */
+.resultados {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #334155;
+}
+
+h2 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #94a3b8;
+}
+
+.fila-resultado {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+}
+
+.total {
+    margin-top: 1rem;
+    padding: 10px;
+    background-color: #1e293b;
+    border-radius: 6px;
+    border: 1px dashed #38bdf8;
+    color: #38bdf8;
+    font-size: 1.2rem;
+}
+
+/* Media Query para pantallas muy pequeñas (reducir padding) */
+@media (max-width: 350px) {
+    .contenedor {
+        padding: 1.2rem;
+    }
+    
+    h1 {
+        font-size: 1.2rem;
+    }
 }
