@@ -13,8 +13,6 @@ function calcularComision(numeroVentas,precioProducto){
 
 
 
-
-
 function validarCampo(id) {
     let valor = recuperartexto(id);
     let errorSpan = document.getElementById("err-" + id);
@@ -73,7 +71,7 @@ function calcular(){
     let spComision = document.getElementById("spComision");
     let spTolta = document.getElementById("spTotal");
     
-    spSueldoBase.textContent = sueldoBase;
-    spComision.textContent = comision;
-    spTolta.textContent = total;
+    spSueldoBase.textContent = "USD "+ sueldoBase;
+    spComision.textContent ="USD " + comision;
+    spTolta.textContent = "USD " + total;
 }
