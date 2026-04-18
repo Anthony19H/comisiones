@@ -1,4 +1,4 @@
-/* Reset y bases */
+/* Reset básico para evitar desbordamientos */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,121 +6,130 @@
 }
 
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #0f172a;
-    color: #f8fafc;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 20px; /* Espacio para que no pegue a los bordes en móvil */
+    padding: 15px; /* Espacio para que no toque los bordes del celular */
 }
 
-/* Contenedor Adaptable */
 .contenedor {
     background-color: #1e293b;
-    padding: 2rem;
-    border-radius: 16px;
+    padding: 30px;
+    border-radius: 12px;
     width: 100%;
-    max-width: 450px; /* Ancho máximo para tablets/escritorio */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    max-width: 400px; /* Se encoge en móvil, pero no crece más de 400px en PC */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
 h1 {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
     text-align: center;
+    margin-bottom: 20px;
     color: #38bdf8;
-}
-
-/* Campos de entrada */
-.campo {
-    margin-bottom: 1.2rem;
 }
 
 label {
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 5px;
     font-size: 0.9rem;
     color: #94a3b8;
 }
 
 input {
     width: 100%;
-    padding: 12px;
-    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 12px; /* Más alto para que sea fácil tocarlo */
+    border-radius: 6px;
     border: 1px solid #334155;
     background-color: #0f172a;
     color: white;
     font-size: 1rem;
-    transition: border-color 0.3s;
 }
 
-input:focus {
-    outline: none;
-    border-color: #38bdf8;
-}
-
-/* Botón con feedback visual */
 button {
     width: 100%;
     padding: 14px;
     background-color: #22c55e;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     color: white;
     font-weight: bold;
     font-size: 1rem;
     cursor: pointer;
-    transition: transform 0.1s, background-color 0.2s;
-    margin-top: 10px;
-}
-
-button:active {
-    transform: scale(0.98);
+    transition: 0.3s;
 }
 
 button:hover {
     background-color: #16a34a;
 }
 
-/* Sección de Resultados */
-.resultados {
-    margin-top: 2rem;
-    padding-top: 1.5rem;
+/* Estilizado de la zona de resultados */
+.resultados-caja {
+    margin-top: 25px;
+    padding-top: 15px;
     border-top: 1px solid #334155;
 }
 
 h2 {
     font-size: 1.1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 10px;
     color: #94a3b8;
 }
 
-.fila-resultado {
+p {
+    margin-bottom: 8px;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0.8rem;
-    font-size: 1rem;
 }
 
-.total {
-    margin-top: 1rem;
-    padding: 10px;
-    background-color: #1e293b;
-    border-radius: 6px;
-    border: 1px dashed #38bdf8;
-    color: #38bdf8;
+hr {
+    border: 0;
+    border-top: 1px solid #334155;
+    margin: 10px 0;
+}
+
+.total-destacado {
     font-size: 1.2rem;
+    font-weight: bold;
+    color: #38bdf8;
 }
 
-/* Media Query para pantallas muy pequeñas (reducir padding) */
-@media (max-width: 350px) {
+/* Ajustes extra para pantallas muy pequeñas */
+@media (max-width: 360px) {
     .contenedor {
-        padding: 1.2rem;
+        padding: 20px;
     }
-    
     h1 {
         font-size: 1.2rem;
     }
+}
+/* Quitar flechas en Chrome, Safari, Edge y Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Quitar flechas en Firefox y navegadores modernos */
+input[type=number] {
+    appearance: none; /* Propiedad estándar */
+    -moz-appearance: textfield; /* Para versiones viejas de Firefox */
+}
+
+.msg-error {
+    color: #ef4444;       /* Rojo suave */
+    font-style: italic;   /* Cursiva */
+    font-size: 0.8rem;
+    display: block;       /* Debajo del input */
+    margin-top: -10px;    /* Ajuste para quedar cerca del input */
+    margin-bottom: 10px;
+    min-height: 1.2rem;   /* Reserva el espacio aunque esté vacío */
+}
+
+input.borde-error {
+    border-color: #ef4444 !important;
 }
